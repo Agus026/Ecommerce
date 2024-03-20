@@ -1,6 +1,9 @@
+import { IoMdCart } from "react-icons/io";
+
 const CartWidget = () => {
+
   return (
-    <img src="./img/carrito-de-compras.png" alt="Carrito de compras" />
+    <IoMdCart size={0} />
   )
 }
 

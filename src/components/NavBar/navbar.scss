@@ -1,16 +1,17 @@
 .navbar {
-    background-color: blue;
-    display: flex;
-    height: 150px;
-    border-bottom: 2px solid black;
-    list-style: none;
-    text-align: center;
+    background-color: rgb(102, 102, 228);    
+    border-bottom: 2px solid black;   
+    
 }
+.navbar ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    text-align:center ;
+    text-decoration: none;
+}
+
 .icon-navbar {
     width: 100px;
     height: 100px;
-}
-.cart {
-    width: 80px;
-    height: 80px;
 }
