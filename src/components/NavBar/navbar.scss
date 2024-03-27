@@ -1,17 +1,31 @@
-.navbar {
-    background-color: rgb(102, 102, 228);    
-    border-bottom: 2px solid black;   
-    
-}
-.navbar ul {
-    padding: 0;
-    display: flex;
-    list-style: none;
-    text-align:center ;
-    text-decoration: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Roboto&family=Ubuntu:wght@300&display=swap');
 
-.icon-navbar {
-    width: 100px;
-    height: 100px;
+li, a, .cart {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px ;
+    color: #edf0f1 ;
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
 }
+.navbar {
+    background-color: #3d3e47;    
+    padding: 15px 5%;
+}
+.navbar ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+}
+li a {
+    transition: all 0.3s ease 0s;
+}
+li a:hover {
+    color: #0088a9;
+} 
