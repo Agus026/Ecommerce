@@ -5,17 +5,19 @@ const NavBar = () => {
 
 
   return (
-    <nav className="navbar">
+    <header>
+      <nav className="navbar">
         <img className="logo" src="/img/logo.png" alt="Logo de la marca" />
-      <ul >
-        <li><a href="#"> Championes</a></li>
-        <li><a href="#"> Camisetas </a></li>
-        <li><a href="#"> Patinetas </a> </li>
-        <a className="cart" href="#"><CartWidget/></a>
-        <p>0</p>
-      </ul>
+        <ul className="list" >
+          <li><a href="#"> Ropa </a></li>
+          <li><a href="#"> Indumentaria </a></li>
+          <li><a href="#"> Skate </a> </li>
+          <a className="cart" href="#"><CartWidget /></a>
+          <p>0</p>
+        </ul>
 
-    </nav>
+      </nav>
+    </header>
   )
 }
 
