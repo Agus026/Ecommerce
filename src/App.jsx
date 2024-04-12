@@ -2,8 +2,8 @@ import "./app.scss"
 import ItemListContainer from './components/ItemListCountainer/ItemListContainer'
 import NavBar from "./components/NavBar/NavBar"
 import ItemCount from "./components/examples/ItemCount/ItemCount"
-
-
+import { BrowserRouter , Routes , Route } from "react-router-dom"
+ 
 function App() {
 
   const addToCart = (count) => {
@@ -11,13 +11,21 @@ function App() {
   };
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      < ItemListContainer titulo="Bienvenido a Ramplate" />
+      
+      <Routes>
+        <Route path="/" element={< ItemListContainer titulo="Bienvenido a Ramplate" />} />
+        <Route path="/category/:idCategory" element={< ItemListContainer />} />
+        <Route path="/detail/:idProduct" element={< ItemDetailContainer />} />
+
+
+      </Routes>
       <ItemCount addToCart={addToCart} />
 
-    </div>
+    </BrowserRouter>
   )
 }
 
 export default App
+category/Skate
