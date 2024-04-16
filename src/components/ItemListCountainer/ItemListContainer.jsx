@@ -3,6 +3,7 @@ import getProducts from '../../data/getProducts'
 import ItemList from './ItemList'
 import { useParams } from "react-router-dom"
 
+
 const ItemListContainer = ({ titulo }) => {
 
   const [products, setProducts] = useState([])
@@ -20,7 +21,7 @@ const ItemListContainer = ({ titulo }) => {
         }
       })
       .catch((error) => console.log(error))
-      .finally(() => console.log("La promesa se termino"))
+      .finally(() => console.log("La promesa se terminó"))
 
   }, [idCategory])
 
