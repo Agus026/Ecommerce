@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import "../ItemListCountainer/itemListContainerStyle.css"
 
 const ItemList = ({products}) => {
   return (

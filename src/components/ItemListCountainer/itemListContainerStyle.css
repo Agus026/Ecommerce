@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+.page-title {
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif ;
+    align-items: center;
+}
+.item-list {
+    padding: 2rem;
+}
+.card-countainer {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.card {
+    flex-direction: column;
+    width:21%;
+    margin: 2%;
+    height: 30rem ;
+}
+.image-card-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12rem 0;
+    border-radius: 10px;
+}
+.image-card {
+    width:95%;
+}

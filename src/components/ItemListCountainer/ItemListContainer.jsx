@@ -1,35 +1,51 @@
 import { useEffect, useState } from 'react'
-import getProducts from '../../data/getProducts'
 import ItemList from './ItemList'
 import { useParams } from "react-router-dom"
-
+import "./itemListContainerStyle.css"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import db from '../../db/db'
 
 const ItemListContainer = ({ titulo }) => {
 
   const [products, setProducts] = useState([])
   
-  const { idCategory } = useParams
+  const { idCategory } = useParams()
   
-  useEffect(() => {
-    getProducts
-      .then((respuesta) => {
-        if (idCategory){
-          const productsFilter = respuesta.filter((product)=> product.categoría === idCategory )
-          setProducts(productsFilter)
-        }else{
-          setProducts(respuesta)
-        }
-      })
-      .catch((error) => console.log(error))
-      .finally(() => console.log("La promesa se terminó"))
+  const getProduct = async () =>{
+   const dataDb = await getDocs(collection(db, "products"));
+   const data = dataDb.docs.map((productDb)=>{
+    return { id: productDb.id, ...productDb.data() }
+   })
+   
+   setProducts(data)
 
+  }
+const getProductByCategory = async() => {
+  const q = query(collection(db, "products"), where("categoría", "==", idCategory));
+  
+  const dataDb = await getDocs(q);
+  
+    const data = dataDb.docs.map((productDb)=>{
+     return { id: productDb.id, ...productDb.data() }
+    })
+   
+   setProducts(data)
+}
+
+
+  useEffect(() => {
+    if (idCategory) {
+     getProductByCategory()
+    }else {
+     getProduct()
+    }
   }, [idCategory])
 
 
 
   return (
-    <div>
-      <div>
+    <div className='item-list'>
+      <div className='page-title'>
         <h1>{titulo}</h1>
       </div>
       <ItemList products={products} />
