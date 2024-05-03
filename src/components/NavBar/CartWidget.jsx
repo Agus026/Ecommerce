@@ -1,17 +1,20 @@
-import { IoMdCart } from "react-icons/io";
-import { CartContext } from "../../context/CartContext";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { IoMdCart } from "react-icons/io";
+import { useContext } from "react";
+
+import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
 
   const { totalQuantity } = useContext(CartContext)
 
+  const quantity = totalQuantity()
+
   return (
     <Link to="/cart" className="cartWidget">
-      <IoMdCart size={40} />
+      <IoMdCart size={35} className={ quantity === 0 ? "icon-cart-cero" : "icon-cart" } />
     
-        <p>{totalQuantity()}</p>
+        <p>{quantity > 0 && quantity }</p>
     </Link>
   )
 }

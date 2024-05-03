@@ -1,32 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Roboto&family=Ubuntu:wght@300&display=swap');
 
+
 .page-title {
+    display:flex;
     justify-content: center;
     font-family: 'Times New Roman', Times, serif ;
-    align-items: center;
 }
-.item-list {
-    padding: 2rem;
+.page-title h1 {
+    flex: block ;
 }
 .card-countainer {
-    display: flex;
-    flex-wrap: wrap;
-    
+    display: grid;  
+    grid-template-columns:repeat(4, 1fr);
+    gap:15px;     
+    width:90%;  
+    max-width: 1200px;
+    margin:auto;
 }
-.card {
-    flex-direction: column;
-    width:21%;
-    margin: 2%;
-    height: 30rem ;
+.card {    
+    width:100%;
+    margin: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 1000ms ease-out;
 }
-.image-card-box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12rem 0;
-    border-radius: 10px;
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.7);
+    transform: translateY(-3%);
 }
 .image-card {
-    width:95%;
+    width:100%;
+    height: 210px;
+}
+.card-body {
+    padding:15px;
+    text-align: center;
+}
+.card-text{
+    line-height: 1.5;
+    color: #6a6a6a;
+}
+.card-title{
+    margin-bottom:15px;
+}
+
+.btn-card{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #0088a9;
+    border-radius: 4px;
+    transition:all 1000ms ease-out;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);    
+}
+.btn-card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.7);
+    background-color: #0088a9 ;
+    color: #fff;
 }
