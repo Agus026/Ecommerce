@@ -1,0 +1,89 @@
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    margin:50px 20px;
+    flex-wrap: nowrap;
+}
+.product-cart{
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4) ;
+    border-radius:6px;  
+    margin: 15px; 
+    width: 500px ;
+    overflow: hidden;    
+}
+
+.imagen-producto{
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.emtyCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;   
+}
+.eliminar-container{
+    display: flex;
+    justify-content: center;
+}
+.eliminar-producto{
+    justify-content: center;
+    align-items: center;
+}
+.btn-emty, .eliminar-producto{
+    padding: 0 50%;    
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #0088a9;
+    border-radius: 4px;
+    transition:all 1000ms ease-out;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);    
+}
+.btn-emty:hover, .eliminar-producto:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.7);
+    background-color: #0088a9 ;
+    color: #fff;
+}
+.descripcion-producto, .descripcion-titulo{    
+    padding: 15px;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    gap: 5px;
+}
+.descripcion-titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    padding-top: 15px;
+}
+.descripcion-producto{
+    font-size: 20px;
+    font-weight: 500;
+}
+.btn-setCart{
+    padding: 0 50%;    
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #0088a9;
+    border-radius: 4px;
+    transition:all 1000ms ease-out;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);   
+    margin-left: 10px;
+}
+.btn-setCart:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.7);
+    background-color: #0088a9 ;
+    color: #fff;
+}

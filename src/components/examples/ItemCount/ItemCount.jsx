@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./itemCount.css"
 
-const ItemCount = ({handleAddToCart}) => {
+const ItemCount = ({ handleAddToCart, stock }) => {
   const [count, useCount] = useState(1)
 
   const handleSubstract = () => {
@@ -10,20 +10,20 @@ const ItemCount = ({handleAddToCart}) => {
     }
   }
   const handleAdd = () => {
-    //proximamente en stock
-    useCount(count + 1)
-
+    if (count < stock) {
+      useCount(count + 1)
+    }
   }
 
   return (
-    <div>    
+    <div className="item-count">
       <div>
-        <button onClick={handleSubstract}>-</button>
-       <p>{count}</p>
-        <button onClick={handleAdd}>+</button>
+        <button className="button-add" onClick={() => handleAddToCart(count)}>Agregar al carrito</button>
       </div>
-      <div>
-        <button onClick={() =>handleAddToCart(count)}>Agregar al carrito</button>
+      <div className="controls-count">
+        <button className="button-count" onClick={handleSubstract}>-</button>
+        <p className="count">{count}</p>
+        <button className="button-count" onClick={handleAdd}>+</button>
       </div>
     </div>
 

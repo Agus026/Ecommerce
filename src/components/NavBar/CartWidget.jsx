@@ -4,6 +4,8 @@ import { useContext } from "react";
 
 import { CartContext } from "../../context/CartContext";
 
+import "./navbar.css"
+
 const CartWidget = () => {
 
   const { totalQuantity } = useContext(CartContext)

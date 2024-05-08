@@ -45,3 +45,11 @@
     color: #0088a9;
     transform: translateY(-3%);
 } 
+.cartWidget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

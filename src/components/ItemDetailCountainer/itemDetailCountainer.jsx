@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./itemDetail"
 import { useParams } from "react-router-dom"
+
 import { doc, getDoc } from "firebase/firestore";
+
+import ItemDetail from "./itemDetail"
+
 import db from "../../db/db";
 
 
@@ -9,6 +12,7 @@ const ItemDetailCountainer = () => {
     const [product, setProduct] = useState({})
 
     const { idProduct } = useParams()
+    
     const getProduct = async () => {
         const docRef = doc(db, "products", idProduct);
         const dataDb = await getDoc(docRef)

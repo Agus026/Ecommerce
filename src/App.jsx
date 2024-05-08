@@ -1,10 +1,17 @@
-import "./app.css"
-import ItemListContainer from './components/ItemListCountainer/ItemListContainer'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import { CartProvider } from "./context/CartContext"
+
+import { ToastContainer } from "react-toastify"
+
 import ItemDetailCountainer from "./components/ItemDetailCountainer/itemDetailCountainer"
 import NavBar from "./components/NavBar/NavBar"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { CartProvider } from "./context/CartContext"
 import Cart from "./components/Cart/Cart"
+import Checkout from "./components/Checkout/Checkout"
+import ItemListContainer from './components/ItemListCountainer/ItemListContainer'
+
+import "./app.css"
+
 function App() {
 
 
@@ -13,7 +20,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <NavBar />
-
+        <ToastContainer/>
         <Routes>
 
           <Route path="/" element={< ItemListContainer titulo="Bienvenido a Ramplate" />} />
@@ -23,6 +30,8 @@ function App() {
           <Route path="/detail/:idProduct" element={< ItemDetailCountainer />} />
 
           <Route path="/cart" element={< Cart/>}/>
+          
+          <Route path="/checkout" element={< Checkout/>}/>
 
         </Routes>
 
